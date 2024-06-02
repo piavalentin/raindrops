@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.rain {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.raindrop {
+  position: absolute;
+  top: -200px;
+  width: 2px;
+  height: 10px;
+  background-color: #283747;
+  animation: drop linear infinite;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px 10px;
+  z-index: 1000;
+}
+
+.controls label {
+  display: none;
+}
+
+.controls input {
+  appearance: none;
+  outline: none;
+  height: 10px;
+  border-radius: 10px;
+  border: 1px solid #555a63;
+  background: none;
+}
+
+.controls input:hover,
+.controls input:active {
+  border: 1px solid #fff;
+}
+
+.controls input::-webkit-slider-thumb {
+  cursor: pointer;
+  appearance: none;
+  width: 5px;
+  height: 5px;
+  background: #555a63;
+  border-radius: 50%;
+}
+
+.controls input:hover::-webkit-slider-thumb,
+.controls input:active::-webkit-slider-thumb {
+  background: #fff;
+}
+
+@keyframes drop {
+  0% {
+      top: 0px;
+      opacity: 1;
+  }
+  100% {
+      top: 100vh;
+      opacity: 0;
+  }
+}
