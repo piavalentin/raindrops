@@ -3,9 +3,7 @@
   "displayName": "raindrops",
   "description": "💆",
   "version": "1.0.0",
-  "author": {
-    "name": "heypia"
-  },
+  "publisher": "piavalentin",
   "icon": "images/icon.png",
   "galleryBanner": {
     "color": "#eb3477",
