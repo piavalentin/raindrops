@@ -17,6 +17,11 @@ No additional requirements or dependencies are needed for this extension.
 Currently, there are no known issues. If you encounter any problems, please report them.
 
 ## Release Notes
+
+### 1.0.1
+
+- Small code enhancements
+
 ### 1.0.0
 
 - Initial release of the "raindrops" extension 🌧️
