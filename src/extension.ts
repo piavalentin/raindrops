@@ -1,12 +1,6 @@
 import * as vscode from 'vscode';
 
-export function activate(context: vscode.ExtensionContext) {
-  const provider = new ColorsViewProvider(context.extensionUri);
-  context.subscriptions.push(
-    vscode.window.registerWebviewViewProvider(ColorsViewProvider.viewType, provider));
-}
-
-class ColorsViewProvider implements vscode.WebviewViewProvider {
+export class ColorsViewProvider implements vscode.WebviewViewProvider {
   public static readonly viewType = 'raindrops.rainView';
   private _view?: vscode.WebviewView;
   constructor(
@@ -31,8 +25,8 @@ class ColorsViewProvider implements vscode.WebviewViewProvider {
   }
 
   private _getHtmlForWebview(webview: vscode.Webview) {
-    const styleMainUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'resources', 'main.css'));
-    const scriptMainUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'resources', 'main.js'));
+    const styleMainUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'src/resources', 'main.css'));
+    const scriptMainUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'src/resources', 'main.js'));
 
     return `
         <!DOCTYPE html>
@@ -56,3 +50,12 @@ class ColorsViewProvider implements vscode.WebviewViewProvider {
     `;
   }
 }
+
+export function activate(context: vscode.ExtensionContext) {
+	const provider = new ColorsViewProvider(context.extensionUri);
+	context.subscriptions.push(
+    vscode.window.registerWebviewViewProvider(ColorsViewProvider.viewType, provider));
+		vscode.window.showInformationMessage('Time to grab your umbrella! Raindrops are on their way! 🌧️');
+}
+
+export function deactivate() {}
