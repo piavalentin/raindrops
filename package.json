@@ -63,5 +63,6 @@
     "type": "git",
     "url": "https://github.com/piavalentin/raindrops"
   },
-  "homepage": "https://github.com/piavalentin/raindrops/blob/main/README.md"
+  "homepage": "https://github.com/piavalentin/raindrops/blob/main/README.md",
+  "license": "SEE LICENSE IN LICENSE.txt"
 }
