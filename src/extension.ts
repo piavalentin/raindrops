@@ -31,11 +31,12 @@ export class ColorsViewProvider implements vscode.WebviewViewProvider {
     return `
         <!DOCTYPE html>
         <html lang="en">
-          <head>
+        <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Raindrops</title>
-				    <link href="${styleMainUri}" rel="stylesheet">
+            <link href="${styleMainUri}" rel="stylesheet">
+            <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; script-src ${webview.cspSource};">
         </head>
         <body>
             <div id="rain">
