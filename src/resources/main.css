@@ -65,11 +65,11 @@ body {
 
 @keyframes drop {
   0% {
-      top: 0px;
-      opacity: 1;
+    top: 0px;
+    opacity: 1;
   }
   100% {
-      top: 100vh;
-      opacity: 0;
+    top: 100vh;
+    opacity: 0;
   }
 }
