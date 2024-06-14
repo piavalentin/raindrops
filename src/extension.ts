@@ -1,5 +1,14 @@
 import * as vscode from "vscode";
 
+function getNonce() {
+	let text = '';
+	const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	for (let i = 0; i < 32; i++) {
+		text += possible.charAt(Math.floor(Math.random() * possible.length));
+	}
+	return text;
+}
+
 export class ColorsViewProvider implements vscode.WebviewViewProvider {
   public static readonly viewType = "raindrops.rainView";
   private _view?: vscode.WebviewView;
@@ -22,11 +31,13 @@ export class ColorsViewProvider implements vscode.WebviewViewProvider {
 
   private _getHtmlForWebview(webview: vscode.Webview) {
     const styleMainUri = webview.asWebviewUri(
-      vscode.Uri.joinPath(this._extensionUri, "src/resources", "main.css"),
+      vscode.Uri.joinPath(this._extensionUri, "resources", "main.css"),
     );
     const scriptMainUri = webview.asWebviewUri(
-      vscode.Uri.joinPath(this._extensionUri, "src/resources", "main.js"),
+      vscode.Uri.joinPath(this._extensionUri, "resources", "main.js"),
     );
+
+    const nonce = getNonce();
 
     return `
         <!DOCTYPE html>
@@ -36,7 +47,7 @@ export class ColorsViewProvider implements vscode.WebviewViewProvider {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Raindrops</title>
             <link href="${styleMainUri}" rel="stylesheet">
-            <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; script-src ${webview.cspSource};">
+            <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; script-src 'nonce-${nonce}';">
         </head>
         <body>
             <div id="rain">
@@ -45,7 +56,7 @@ export class ColorsViewProvider implements vscode.WebviewViewProvider {
                 <input type="range" id="speedRange" min="0.1" max="2" step="0.1" value="0.5">
               </div>
             </div>
-            <script src="${scriptMainUri}"></script>
+            <script nonce="${nonce}" src="${scriptMainUri}"></script>
         </body>
         </html>
     `;
