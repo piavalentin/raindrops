@@ -7,7 +7,7 @@ Transform your coding experience with a calming raindrop effect right within you
 - **Dynamic Raindrop Effect:** Enjoy a mesmerizing raindrop animation while you code.
 - **Customizable Speed:** Adjust the speed of the raindrops to your liking with an intuitive slider.
 
-![Raindrop Animation]() // TODO
+![Raindrop Animation](https://github.com/piavalentin/raindrops/assets/9430235/3c2f309d-b30e-4f06-a7a1-1ffff458d7ba)
 
 ## Requirements
 No additional requirements or dependencies are needed for this extension.
