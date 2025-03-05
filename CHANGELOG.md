@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.3]
+
+- Update CHANGELOG
+
+## [1.1.2]
+
+- Update and audit npm packages
+
 ## [1.0.2]
 
 - Fix access to local resources
