@@ -1,10 +1,9 @@
 # Changelog
 
-## [1.4.1]
+## [1.4.2]
 
+- Fix eslint
 - VSCode published version
-
-##  [1.2.0]
 - Bump Dependencies 
 
 ## [1.1.3]
