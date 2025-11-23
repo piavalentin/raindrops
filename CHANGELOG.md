@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4.1]
+
+- VSCode published version
+
 ##  [1.2.0]
 - Bump Dependencies 
 
