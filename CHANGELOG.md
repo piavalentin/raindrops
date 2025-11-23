@@ -1,5 +1,8 @@
 # Changelog
 
+##  [1.2.0]
+- Bump Dependencies 
+
 ## [1.1.3]
 
 - Update CHANGELOG
